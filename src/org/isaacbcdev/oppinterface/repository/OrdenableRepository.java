@@ -1,10 +1,8 @@
 package org.isaacbcdev.oppinterface.repository;
 
-import org.isaacbcdev.oppinterface.model.Client;
-
 import java.util.List;
 
-public interface OrdenableRepository {
+public interface OrdenableRepository<T> {
 
-    List<Client> listAll(String field, Direction dir);
+    List<T> listAll(String field, Direction dir);
 }

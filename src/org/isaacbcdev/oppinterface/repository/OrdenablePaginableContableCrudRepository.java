@@ -1,5 +1,5 @@
 package org.isaacbcdev.oppinterface.repository;
 
-public interface OrdenablePaginableContableCrudRepository extends OrdenableRepository, CrudRepository, PaginableRepository, CountableRepository {
+public interface OrdenablePaginableContableCrudRepository<T> extends OrdenableRepository<T>, CrudRepository<T>, PaginableRepository<T>, CountableRepository {
 
 }

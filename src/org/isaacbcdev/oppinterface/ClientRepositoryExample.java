@@ -1,20 +1,20 @@
 package org.isaacbcdev.oppinterface;
 
 import org.isaacbcdev.oppinterface.model.Client;
-import org.isaacbcdev.oppinterface.repository.ClientListRepository;
+import org.isaacbcdev.oppinterface.repository.list.ClientListRepository;
 import org.isaacbcdev.oppinterface.repository.Direction;
 import org.isaacbcdev.oppinterface.repository.OrdenablePaginableContableCrudRepository;
 
 import java.util.List;
 
-public class RepositoryExample {
+public class ClientRepositoryExample {
     public static void main(String[] args) {
-        OrdenablePaginableContableCrudRepository repository = new ClientListRepository();
+        OrdenablePaginableContableCrudRepository<Client> repository = new ClientListRepository();
 
-        repository.saveClient(new Client("Isaac", "Badel"));
-        repository.saveClient(new Client("John", "Doe"));
-        repository.saveClient(new Client("Mark", "White"));
-        repository.saveClient(new Client("Chris", "Li"));
+        repository.save(new Client("Isaac", "Badel"));
+        repository.save(new Client("John", "Doe"));
+        repository.save(new Client("Mark", "White"));
+        repository.save(new Client("Chris", "Li"));
 
         List<Client> clients = repository.listAll();
         clients.forEach(System.out::println);
@@ -30,7 +30,7 @@ public class RepositoryExample {
         System.out.println("===== update =====");
         Client johnDoe = new Client("John", "Clark");
         johnDoe.setId(2);
-        repository.updateClient(johnDoe);
+        repository.update(johnDoe);
 
         Client john = repository.getById(2);
         System.out.println(john);

@@ -1,17 +1,15 @@
 package org.isaacbcdev.oppinterface.repository;
 
-import org.isaacbcdev.oppinterface.model.Client;
-
 import java.util.List;
 
-public interface CrudRepository {
-    List<Client> listAll();
+public interface CrudRepository<T> {
+    List<T> listAll();
 
-    Client getById(Integer id);
+    T getById(Integer id);
 
-    void saveClient(Client client);
+    void save(T t);
 
-    void updateClient(Client client);
+    void update(T t);
 
     void delete(Integer id);
 }

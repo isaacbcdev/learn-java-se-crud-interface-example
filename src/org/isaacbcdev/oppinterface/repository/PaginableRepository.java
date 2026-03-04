@@ -4,8 +4,8 @@ import org.isaacbcdev.oppinterface.model.Client;
 
 import java.util.List;
 
-public interface PaginableRepository {
+public interface PaginableRepository<T> {
 
-    List<Client> listAll(int from, int to);
+    List<T> listAll(int from, int to);
 
 }
