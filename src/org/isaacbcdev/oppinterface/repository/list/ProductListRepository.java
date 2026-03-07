@@ -3,6 +3,7 @@ package org.isaacbcdev.oppinterface.repository.list;
 import org.isaacbcdev.oppinterface.model.Product;
 import org.isaacbcdev.oppinterface.repository.AbstractListRepository;
 import org.isaacbcdev.oppinterface.repository.Direction;
+import org.isaacbcdev.oppinterface.repository.exceptions.ReadingAccessDataException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 public class ProductListRepository extends AbstractListRepository<Product> {
 
     @Override
-    public void update(Product product) {
+    public void update(Product product) throws ReadingAccessDataException {
         Product p = getById(product.getId());
         p.setName(product.getName());
         p.setPrice(product.getPrice());

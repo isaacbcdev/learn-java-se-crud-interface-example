@@ -3,13 +3,14 @@ package org.isaacbcdev.oppinterface.repository.list;
 import org.isaacbcdev.oppinterface.model.Client;
 import org.isaacbcdev.oppinterface.repository.AbstractListRepository;
 import org.isaacbcdev.oppinterface.repository.Direction;
+import org.isaacbcdev.oppinterface.repository.exceptions.ReadingAccessDataException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClientListRepository extends AbstractListRepository<Client> {
     @Override
-    public void update(Client client) {
+    public void update(Client client) throws ReadingAccessDataException {
         Client c = this.getById(client.getId());
 
         c.setName(client.getName());
